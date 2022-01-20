@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Адаптивная вёрстка сайта</title>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic|Playfair+Display:400,700&subset=latin,cyrillic">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+<body>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: ‘Raleway’, sans-serif;
+    padding: 20px;
+    background: #f1f1f1;
+}
+h2 {
+    color: #4a5f7f;
+    font-family: ‘Raleway’, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 72px;
+    margin: 0 5px 24px;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase; }
+
+h5 {
+    color: white;
+    font-family: ‘Raleway’, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 72px;
+    margin: 0 5px 24px;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase; }
+
+p {
+    color: black;
+    font-family: ‘Raleway’,sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 35px;
+    margin: 0 0 30px; }
+
+.nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
+	display: flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+
+    justify-content: space-around;
+    flex-direction: row;
+    font-size: 100%;
+    text-align: center;
+    background: white;
+    display: flex;
+    min-width: 0;
+    border-bottom: 10px solid #f1f1f1;
+}
+.nav .item {
+    height: 70px;
+    min-width: 0;
+    max-width: 700px;
+    border-radius: 20px;
+    margin: 10px 10px 10px;
+
+}
+
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+}
+
+.theme {
+    background-color: white;
+    border-top: 2px solid #f1f1f1;
+    border-bottom: 2px solid #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+.card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+}
+.tweets-item {
+    display: flex;
+    padding: 13px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.tweets-item-image {
+    width: 50px;
+    display: block;
+    height: 50px;
+    margin-right: 15px;
+    top: 14px;
+
+}
+
+.tweets-item-content {
+    width: calc(100% - 60px);
+    line-height: 18px;
+}
+
+.tweets-item-username {
+    font-size: 15px;
+    color: #333;
+    text-align: left;
+}
+
+.tweets-item-username span {
+    font-size: 13px;
+    color: #999;
+    font-weight: 400;
+}
+
+.tweets-item-text {
+    font-size: 15px;
+    color: #333;
+}
+
+.tweets-item-date {
+    font-size: 11px;
+    color: #999;
+    text-align: right;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer {
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
+    text-align: center;
+    background: #4a5f7f;
+    height: 70px;
+    width: 75%;
+    border-bottom: 10px solid #f1f1f1;
+
+}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 23px;
+}
+.social {
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+
+.social-link {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: auto;
+}
+
+
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+    .nav {
+      flex-direction: column;
+      position: inherit;
+
+    }
+    .footer{
+        width: 100%;
+    }
+}
+
+</style>
+
+<div class="nav">
+    <div class="item">
+          <h2>home</h2>
+    </div>
+    <div class="item">
+          <h2>profile</h2>
+    </div>
+    <div class="item">
+          <h2>Messages</h2>
+    </div>
+    <div class="item">
+          <h2>search</h2>
+    </div>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+        <li class="tweets-item">
+            <img src="https://i.pinimg.com/474x/fe/be/86/febe8698545f341393c9befb277ac905.jpg" alt="username" class="tweets-item-image">
+
+            <div class="tweets-item-content">
+                <h3 class="tweets-item-username">Username <span>@Username</span>
+                <span class="tweets-item-date">7 jule</span></h3>
+                <p class="tweets-item-text">i iz not okay</p>
+                <div class="footer-top-item">
+					<ul class="social">
+						<img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916603.svg?token=exp=1642633598~hmac=84111fc15c48bed49d7980a2f7abb150" alt="1" class="social-link social-item">
+						<img src="https://www.flaticon.com/svg/vstatic/svg/6407/6407194.svg?token=exp=1642633862~hmac=97b72902a1f881dc69db862da288306f" alt="1" class="social-link social-item">
+                        <img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916582.svg?token=exp=1642633921~hmac=80068bc1fda1215dc4c9fa6bf4776add" alt="1" class="social-link social-item">
+                        <img src="https://www.flaticon.com/svg/vstatic/svg/3917/3917574.svg?token=exp=1642633941~hmac=17004329e8650ee1dce1ce18b1c41709" alt="1" class="social-link social-item">
+					</ul>
+				</div>
+            </div>
+        </li>
+        <li class="tweets-item">
+            <img src="https://i.pinimg.com/474x/bd/2a/98/bd2a98cde134186b721e3bba45d22df0.jpg" alt="username" class="tweets-item-image">
+
+            <div class="tweets-item-content">
+                <h3 class="tweets-item-username">Username <span>@Username</span>
+                <span class="tweets-item-date">7 jule</span></h3>
+                <p class="tweets-item-text">i want lugaw, i need lugaw</p>
+                <ul class="social">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916603.svg?token=exp=1642633598~hmac=84111fc15c48bed49d7980a2f7abb150" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/6407/6407194.svg?token=exp=1642633862~hmac=97b72902a1f881dc69db862da288306f" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916582.svg?token=exp=1642633921~hmac=80068bc1fda1215dc4c9fa6bf4776add" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3917/3917574.svg?token=exp=1642633941~hmac=17004329e8650ee1dce1ce18b1c41709" alt="1" class="social-link social-item">
+                </ul>
+            </div>
+        </li>
+
+        <li class="tweets-item">
+            <img src="https://i.pinimg.com/474x/1c/6b/77/1c6b778e1a5ce6cb4d4a6ad89f50b097.jpg" alt="username" class="tweets-item-image">
+
+            <div class="tweets-item-content">
+                <h3 class="tweets-item-username">Username <span>@Username</span>
+                <span class="tweets-item-date">7 jule</span></h3>
+                <p class="tweets-item-text">I’ve covered all these topics but I don’t remember going over them??</p>
+                <ul class="social">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916603.svg?token=exp=1642633598~hmac=84111fc15c48bed49d7980a2f7abb150" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/6407/6407194.svg?token=exp=1642633862~hmac=97b72902a1f881dc69db862da288306f" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916582.svg?token=exp=1642633921~hmac=80068bc1fda1215dc4c9fa6bf4776add" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3917/3917574.svg?token=exp=1642633941~hmac=17004329e8650ee1dce1ce18b1c41709" alt="1" class="social-link social-item">
+                </ul>
+
+            </div>
+        </li>
+
+        <li class="tweets-item">
+            <img src="https://i.pinimg.com/474x/35/0f/aa/350faaa7683c5f85f535f69afd755e06.jpg" alt="username" class="tweets-item-image">
+
+            <div class="tweets-item-content">
+                <h3 class="tweets-item-username">Username <span>@Username</span>
+                <span class="tweets-item-date">7 jule</span></h3>
+                <p class="tweets-item-text">slept tired, woke up tired</p>
+                <ul class="social">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916603.svg?token=exp=1642633598~hmac=84111fc15c48bed49d7980a2f7abb150" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/6407/6407194.svg?token=exp=1642633862~hmac=97b72902a1f881dc69db862da288306f" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916582.svg?token=exp=1642633921~hmac=80068bc1fda1215dc4c9fa6bf4776add" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3917/3917574.svg?token=exp=1642633941~hmac=17004329e8650ee1dce1ce18b1c41709" alt="1" class="social-link social-item">
+                </ul>
+            </div>
+        </li>
+
+        <li class="tweets-item">
+            <img src="https://i.pinimg.com/474x/4e/32/94/4e32945812ab63daac1720aa18e64c1d.jpg" alt="username" class="tweets-item-image">
+
+            <div class="tweets-item-content">
+                <h3 class="tweets-item-username">Username <span>@Username</span>
+                <span class="tweets-item-date">7 jule</span></h3>
+                <p class="tweets-item-text">Keyboard navigation should be intuitive.</p>
+                <ul class="social">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916603.svg?token=exp=1642633598~hmac=84111fc15c48bed49d7980a2f7abb150" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/6407/6407194.svg?token=exp=1642633862~hmac=97b72902a1f881dc69db862da288306f" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916582.svg?token=exp=1642633921~hmac=80068bc1fda1215dc4c9fa6bf4776add" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3917/3917574.svg?token=exp=1642633941~hmac=17004329e8650ee1dce1ce18b1c41709" alt="1" class="social-link social-item">
+                </ul>
+            </div>
+        </li>
+
+        <li class="tweets-item">
+            <img src="https://i.pinimg.com/474x/73/cf/64/73cf64c2db58ae2781f9d341d8f4b372.jpg" alt="username" class="tweets-item-image">
+
+            <div class="tweets-item-content">
+                <h3 class="tweets-item-username">Username <span>@Username</span>
+                <span class="tweets-item-date">7 jule</span></h3>
+                <p class="tweets-item-text">I think my body clock will only go back to normal if I’d be employed in an 8-5 job.</p>
+                <ul class="social">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916603.svg?token=exp=1642633598~hmac=84111fc15c48bed49d7980a2f7abb150" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/6407/6407194.svg?token=exp=1642633862~hmac=97b72902a1f881dc69db862da288306f" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916582.svg?token=exp=1642633921~hmac=80068bc1fda1215dc4c9fa6bf4776add" alt="1" class="social-link social-item">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/3917/3917574.svg?token=exp=1642633941~hmac=17004329e8650ee1dce1ce18b1c41709" alt="1" class="social-link social-item">
+                </ul>
+            </div>
+        </li>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>trends</h2>
+      <div class="theme">#netflix</div><br>
+      <div class="theme">Amity</div><br>
+      <div class="theme">Adora</div><br>
+      <div class="theme">#Felix</div><br>
+      <div class="theme">#GenshinImpact</div><br>
+      <div class="theme">Билл Гейтс</div><br>
+      <div class="theme">Bang Chan</div>
+    </div>
+    <div class="card">
+      <h2>реклама</h2>
+    </div>
+    <div class="card">
+      <h2>большая <br>реклама</h2>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <h5>new post</h5>
+</div>
+</body>
+</html>
